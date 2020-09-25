@@ -1,0 +1,14 @@
+#home {
+  margin-top: 5vh;
+  margin-left: auto; 
+  margin-right: auto;
+  height: 86vh;
+  width: 155vh;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+

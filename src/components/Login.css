@@ -1,0 +1,44 @@
+#login {
+   margin-top: 5vh;
+   margin-left: auto;
+   margin-right: auto;
+   height: 86vh;
+   width: 155vh; 
+   background-color: beige;
+   text-align: center;  
+}
+
+#loginform {
+  display: inline-block;
+}
+
+#insideform {
+   height: 36vh;
+   width: 40vh;
+   display: inline-block;
+   margin-top: 20vh;
+   
+}
+
+#lbutton {
+   height: 40px;
+   width: 80px;
+   opacity: 1;
+   margin-right: 20px;
+   background-color: #bdb76b;
+   border: none;
+   color: beige;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   outline: none;
+}
+
+#lbutton:hover{
+   opacity: 0.7
+}
+
+#slink {
+  color: #bdb76b;
+}

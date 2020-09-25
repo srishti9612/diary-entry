@@ -1,0 +1,56 @@
+#insideread {
+  width: 100%;
+  height: 100%;
+}
+
+#read {
+  display: flex;
+  display-direction: row;
+  height: 86vh;
+  margin: 0;
+}
+
+#content {
+  height: 94%;
+  width: 100%;
+  padding-top: 4px;
+  padding-left: 4px;
+  background-color: white;
+}
+
+#bottombar {
+  height: 6%;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  background-color: beige;
+}
+
+p {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  white-space: pre-line;
+  white-space: pre-wrap;
+}
+
+
+#prev {
+  cursor: pointer;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 4px;
+}
+
+#next {
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+#delete {
+   cursor: pointer;
+   margin-right: 10px;
+   margin-top: 3px;
+}
