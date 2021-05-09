@@ -18,6 +18,7 @@
 
 ::-webkit-scrollbar {
   width: 6px;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar-track {

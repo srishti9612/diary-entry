@@ -26,7 +26,7 @@ return (
 	id="read" 
 	className="col-8 nopadding">
      <div id="insideread">
-      <div id="content"><p> {Content} </p> </div>
+      <div id="content"><p>{Content}</p></div>
       <div id="bottombar">
        {<>
 	 <img

@@ -95,7 +95,7 @@ const Home = ({setLoggedIn}) => {
 	    />
        </div>
     </div>
-  )  
+  )
 }
 
 export default Home

@@ -18,7 +18,7 @@ const App = () => {
     () => Boolean(loggedInVal || false) 
   )
   
-
+  
   useEffect(() => {
     window.localStorage.setItem("loggedIn", loggedIn)
   }, [loggedIn])
