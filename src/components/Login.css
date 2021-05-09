@@ -4,35 +4,45 @@
    margin-right: auto;
    height: 86vh;
    width: 155vh; 
-   background-color: beige;
-   text-align: center;  
+   background-color: #404040;
+   text-align: left;  
+   display: flex;
+   flex-direction: column;
 }
 
 #loginform {
   display: inline-block;
+  margin-left: 10vh;
+  margin-top: 5vh;
 }
 
 #insideform {
-   height: 36vh;
-   width: 40vh;
+   height: 50vh;
+   width: 60vh;
    display: inline-block;
-   margin-top: 20vh;
-   
+   margin-top: 6vh;
+   text-align: center;
+   border-radius: 60px;
+   background-color: white;
+   box-shadow: 1px 1px 2px 2px;
 }
 
 #lbutton {
-   height: 40px;
-   width: 80px;
+   height: 7vh;
+   width: 15vh;
    opacity: 1;
    margin-right: 20px;
-   background-color: #bdb76b;
+   margin-top: 4vh;
+   background-color: #404040;
    border: none;
-   color: beige;
+   border-radius: 20px;
+   color: #51F0D3;
    text-align: center;
    text-decoration: none;
    display: inline-block;
-   font-size: 16px;
+   font-size: 18px;
    outline: none;
+   box-shadow: 1px 2px 2px 1px #F2F0F0;
 }
 
 #lbutton:hover{
@@ -40,5 +50,51 @@
 }
 
 #slink {
-  color: #bdb76b;
+  color: #404040;
+  font-size: 18px;
+}
+
+.username {
+  margin-top: 15vh;
+  align-self: center;
+  border: none;
+  outline: none;
+  height: 6vh;
+  width: 40vh;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #F2F0F0;
+}
+
+.password {
+   margin-top: 2vh;
+   align-self: center;
+   border: none;
+   outline: none;
+   height: 6vh;
+   width: 40vh;
+   background-color: #F2F0F0;
+   text-align: center;
+   border-radius: 10px;
+}
+
+.heading {
+  font-size: 48px;
+  padding-left: 24vh;
+  font-weight: bold;
+  padding-top: 5vh;
+  color: #51F0D3;
+}
+
+.contents {
+  display: flex;
+  flex-direction: row;
+}
+
+.girlpicture {
+  margin-top: 12vh;
+  margin-right: 25vh;
+  width: 60vh;
+  height: 50vh;
+  /*background-color: blue;*/
 }

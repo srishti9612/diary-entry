@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 import './Login.css'
 import loginService from '../services/entries.js'
+import { ReactComponent as GirlPicture } from './assets/girl.svg'
 
 
 const Login = ({ setLoggedIn }) => {
@@ -37,24 +38,26 @@ const Login = ({ setLoggedIn }) => {
 
     return (
       <div id="login" className="shadow p-3 mb-5 rounded">
+	<div className="heading">My Journal</div>
+	<div className="contents">
 	<form id="loginform" onSubmit={handleLogin}>
 	 <div id="insideform">
-	  <div className="form-group">
+	  <div>
 	      <input
 	       placeholder="username"
 	       id="username"
-	       className="form-control"
+	       className="username"
 	       type="text"
 	       value={username}
 	       name="Username"
 	       onChange={({ target }) => setUsername(target.value)}
 	      />
 	  </div>
-	  <div className="form-group">
+	  <div>
 	      <input
 	       id="password"
 	       placeholder="password"
-	       className="form-control"
+	       className="password"
 	       type="password"
 	       value={password}
 	       name="Password"
@@ -65,6 +68,8 @@ const Login = ({ setLoggedIn }) => {
 	  <Link id="slink" to="/signup">Sign Up</Link>
 	 </div>
 	</form>
+	<GirlPicture className="girlpicture" />
+	</div>
       </div>	
     )
 }
