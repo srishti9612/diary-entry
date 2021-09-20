@@ -3,6 +3,7 @@ import { useHistory, Link } from 'react-router-dom'
 import './Login.css'
 import loginService from '../services/entries.js'
 import { ReactComponent as GirlPicture } from './assets/writing.svg'
+import helper from './../utils/helper'
 
 
 const Login = ({ setLoggedIn }) => {
@@ -32,7 +33,7 @@ const Login = ({ setLoggedIn }) => {
 		        )
 		        history.push('/home')
 		    } else {
-		        alert("Something is wrong")
+		        helper.showtoast("Invalid Credentials")
 		    }
 	    })
     }
@@ -63,7 +64,7 @@ const Login = ({ setLoggedIn }) => {
 	             name="Password"
 	             onChange={({ target }) => setPassword(target.value)}/>
 	        </div>
-	        <button id="lbutton" type="submit">Login</button>
+	        <button id="lbutton" type="submit">Log In</button>
 	        <Link id="slink" to="/signup">Sign Up</Link>
 	      </div>
 	    </form>

@@ -24,7 +24,7 @@ const signup = newObject => {
 const login = credentials => {
   const request = axios.post('/api/login', credentials)
   return request.then(response => response.data)
-                .catch(err => alert("Invalid Credentials"))
+                .catch(err => console.log(err))
 }
 
 
