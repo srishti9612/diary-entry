@@ -16,12 +16,12 @@ const Signup = () => {
        event.preventDefault()
        const userObject = {
          username: username,
-	 password: password,
+	     password: password,
        }
 
-       if(cpassword!=password){
+       if(cpassword!==password){
           passwordmatch=false;
-	  alert("Passwords don't match!!")
+	      alert("Passwords don't match!!")
        } else {
           passwordmatch=true;
        }

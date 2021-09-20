@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Home1.css'
 import Left from './Left'
+import Sidebar from './Sidebar'
 import Conditional from './Conditional'
 import entryService from '../services/entries.js'
 
@@ -11,6 +12,8 @@ const Home = ({setLoggedIn}) => {
   const [ entries, setEntries ] = useState([])
 
   const [ toggle, setToggle ] = useState(true)
+	
+  const [ selected, setSelected ] = useState('write')
 
   const [ currentEntry, setCurrentEntry ] = useState(0)
 
@@ -49,13 +52,21 @@ const Home = ({setLoggedIn}) => {
 
   const handleRead = () => {
      setToggle(false)
-    
+     setSelected('read')
   }
 
   const handleWrite = () => {
      setToggle(true)
+     setSelected('write')
   }
-	
+
+  const handleInsights = () => {
+     setSelected('insights')
+  }
+
+  const handleViewAll = () => {
+     setSelected('viewall')
+  }
 
   useEffect(() => {
    
@@ -71,10 +82,9 @@ const Home = ({setLoggedIn}) => {
 
   return (
     <div 
-       id="home" 
-       className="container shadow bg-white rounded">
-      <div className="row">
-       <Left
+       id="home">
+	  <Sidebar />
+	  {/*<Left
 	 handleRead={handleRead}
 	 handleWrite={handleWrite}
 	 toggle={toggle}
@@ -92,8 +102,7 @@ const Home = ({setLoggedIn}) => {
 	    currentEntry={currentEntry}
 	    setCurrentEntry={setCurrentEntry}
 	    setEntries={setEntries}
-	    />
-       </div>
+	    />*/}
     </div>
   )
 }

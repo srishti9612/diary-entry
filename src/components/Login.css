@@ -4,6 +4,8 @@
    margin-right: auto;
    height: 86vh;
    width: 155vh; 
+   border-radius: 10px;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
    background-color: #404040;
    text-align: left;  
    display: flex;
@@ -12,19 +14,19 @@
 
 #loginform {
   display: inline-block;
-  margin-left: 10vh;
-  margin-top: 5vh;
+  margin-left: 20vh;
+  /*margin-top: 1vh;*/
 }
 
 #insideform {
    height: 50vh;
-   width: 60vh;
+   width: 65vh;
    display: inline-block;
    margin-top: 6vh;
    text-align: center;
-   border-radius: 60px;
-   background-color: white;
-   box-shadow: 1px 1px 2px 2px;
+   background: rgba(211, 225, 223, 0.25);
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 120px 20px;
 }
 
 #lbutton {
@@ -42,7 +44,7 @@
    display: inline-block;
    font-size: 18px;
    outline: none;
-   box-shadow: 1px 2px 2px 1px #F2F0F0;
+   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 #lbutton:hover{
@@ -50,7 +52,7 @@
 }
 
 #slink {
-  color: #404040;
+  color: #51F0D3;
   font-size: 18px;
 }
 
@@ -61,9 +63,9 @@
   outline: none;
   height: 6vh;
   width: 40vh;
-  text-align: center;
+  padding-left: 3vh;
   border-radius: 10px;
-  background-color: #F2F0F0;
+  background: rgba(196, 196, 196, 0.63);
 }
 
 .password {
@@ -73,28 +75,31 @@
    outline: none;
    height: 6vh;
    width: 40vh;
-   background-color: #F2F0F0;
-   text-align: center;
+   background-color: rgba(196, 196, 196, 0.63);
+   padding-left: 3vh;
    border-radius: 10px;
 }
 
 .heading {
-  font-size: 48px;
-  padding-left: 24vh;
+  font-size: 42px;
+  padding-left: 40vh;
   font-weight: bold;
-  padding-top: 5vh;
+  padding-top: 8vh;
   color: #51F0D3;
 }
 
 .contents {
   display: flex;
   flex-direction: row;
+  /*background-color: green;*/
+  height: 100%;
+  width: 100%;
 }
 
 .girlpicture {
-  margin-top: 12vh;
-  margin-right: 25vh;
-  width: 60vh;
-  height: 50vh;
+  margin-top: 10vh;
+  margin-right: 20vh;
   /*background-color: blue;*/
+  width: 80vh;
+  height: 40vh;
 }
