@@ -15,7 +15,6 @@
 #loginform {
   display: inline-block;
   margin-left: 20vh;
-  /*margin-top: 1vh;*/
 }
 
 #insideform {
@@ -48,7 +47,7 @@
 }
 
 #lbutton:hover{
-   opacity: 0.7
+   opacity: 0.7;
 }
 
 #slink {
@@ -91,15 +90,13 @@
 .contents {
   display: flex;
   flex-direction: row;
-  /*background-color: green;*/
   height: 100%;
   width: 100%;
 }
 
-.girlpicture {
-  margin-top: 10vh;
+.boypicture {
+  margin-top: 5vh;
   margin-right: 20vh;
-  /*background-color: blue;*/
-  width: 80vh;
-  height: 40vh;
+  width: 90vh;
+  height: 50vh;
 }

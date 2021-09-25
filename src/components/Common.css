@@ -1,0 +1,42 @@
+.dividingline {
+    width: 60%;
+    height: 0.1%;
+    background-color: #C4C4C4;
+}
+
+.iconbackground {
+    width: 75%;
+    height: 60%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+.iconbackground:hover {
+    background-color: rgba(81, 240, 211, 0.1);
+}
+
+.iconbackground:active {
+    background-color:rgba(81, 240, 211, 0.2);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    cursor: pointer;
+}
+  
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+  

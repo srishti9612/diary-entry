@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 import './Login.css'
 import loginService from '../services/entries.js'
-import { ReactComponent as GirlPicture } from './assets/writing.svg'
+import { ReactComponent as BoyPicture } from './assets/write.svg'
 import helper from './../utils/helper'
 
 
@@ -68,7 +68,7 @@ const Login = ({ setLoggedIn }) => {
 	        <Link id="slink" to="/signup">Sign Up</Link>
 	      </div>
 	    </form>
-	    <GirlPicture className="girlpicture" />
+	    <BoyPicture className="boypicture" />
 	    </div>
       </div>	
     )

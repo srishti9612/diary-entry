@@ -1,56 +1,91 @@
-#insideread {
-  width: 100%;
-  height: 100%;
+.loader {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+.read {
+    width: 105vh;
+    height: 86vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-#read {
-  display: flex;
-  display-direction: row;
-  height: 86vh;
-  margin: 0;
+.readingbox {
+    width: 80%;
+    height: 85%;
+    margin-right: 4vh;
+    padding-left: 2vh;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    user-select: none;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    white-space: pre-wrap;
 }
 
-#content {
-  height: 94%;
-  width: 100%;
-  padding-top: 4px;
-  padding-left: 4px;
-  background-color: white;
+.date-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 3vh;
+    color: #478F82;
 }
 
-#bottombar {
-  height: 6%;
-  width: 100%;
-  bottom: 0;
-  margin: 0;
-  background-color: beige;
+.innerbox {
+    width: 100%;
+    overflow-y: auto;
+    padding-top: 2vh;
 }
 
-p {
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  overflow-wrap: break-word;
-  white-space: pre-line;
-  white-space: pre-wrap;
+.readactions {
+    width: 8%;
+    height: 40%;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-
-#prev {
-  cursor: pointer;
-  margin-left: 6px;
-  margin-right: 6px;
-  margin-top: 4px;
-}
-
-#next {
-  cursor: pointer;
-  margin-top: 4px;
-}
-
-#delete {
+.prevaction {
+   width: 100%;
+   height: 33.33%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 1vh;
    cursor: pointer;
-   margin-right: 10px;
-   margin-top: 3px;
+}
+
+.nextaction {
+   width: 100%;
+   height: 33.33%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 1vh;
+   cursor: pointer;
+}
+
+.deleteaction {
+   width: 100%;
+   height: 33.33%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
 }

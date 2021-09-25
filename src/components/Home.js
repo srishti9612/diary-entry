@@ -1,108 +1,54 @@
-import React, { useState, useEffect } from 'react'
-import './Home1.css'
-import Left from './Left'
+import React, { useState } from 'react'
+import './Home.css'
+import { useHistory } from 'react-router-dom'
 import Sidebar from './Sidebar'
-import Conditional from './Conditional'
-import entryService from '../services/entries.js'
+import Selected from './Selected'
 
 const Home = ({setLoggedIn}) => {
 
-  const [ newContent, setContent ] = useState('')
+   const [ selected, setSelected ] = useState('')
 
-  const [ entries, setEntries ] = useState([])
 
-  const [ toggle, setToggle ] = useState(true)
-	
-  const [ selected, setSelected ] = useState('write')
+   const history = useHistory()
 
-  const [ currentEntry, setCurrentEntry ] = useState(0)
 
-  const handleContent = (event) => {
-     setContent(event.target.value)
-  }
-
-  const addEntry = (event) => {
-      event.preventDefault()
-     
-      if(currentEntry<0){
-        setCurrentEntry(0)
-      }
-
+   const handleLogout = () => {
+       window.localStorage.setItem(
+         'token', 'null'
+       )
+       window.localStorage.setItem(
+         'loggedIn', 'false'
+       )
       
-      let dateFormat = require('dateformat')
-      let now = new Date()
-      let newdate = dateFormat(now)
-      
-      let newId = entries.length+1
+       setLoggedIn(false)
+       history.push('/')
+       window.localStorage.clear()
+   }
 
-      const entryObject = {
-        id: newId ,
-	content: newContent,
-	date: newdate,
-      }
-   
-      entryService
-	.newentry(entryObject)
-	.then(returnedObject => {
-	   setEntries(entries.concat(returnedObject))
-	})
-      
-      setContent('')
-  }
+   const handleRead = () => {
+       setSelected('read')
+       console.log(selected)
+   }
 
-  const handleRead = () => {
-     setToggle(false)
-     setSelected('read')
-  }
+   const handleWrite = () => {
+       setSelected('write')
+       console.log(selected)
+   }
 
-  const handleWrite = () => {
-     setToggle(true)
-     setSelected('write')
-  }
-
-  const handleInsights = () => {
-     setSelected('insights')
-  }
-
-  const handleViewAll = () => {
-     setSelected('viewall')
-  }
-
-  useEffect(() => {
-   
-    entryService
-      .getAll()
-      .then(returnedObject => {
-         setEntries(returnedObject)
-      })
-
-  }, [])
-
-
+   const handleInsights = () => {
+       setSelected('insights')
+       console.log(selected)
+   }
 
   return (
-    <div 
-       id="home">
-	  <Sidebar />
-	  {/*<Left
-	 handleRead={handleRead}
-	 handleWrite={handleWrite}
-	 toggle={toggle}
-	 entries={entries}
-	 setCurrentEntry={setCurrentEntry}
-	 setLoggedIn={setLoggedIn}
-	 />
-        
-        <Conditional 
-	    toggle={toggle}
-	    addEntry={addEntry}
-	    newContent={newContent}
-	    handleContent={handleContent}
-	    entries={entries}
-	    currentEntry={currentEntry}
-	    setCurrentEntry={setCurrentEntry}
-	    setEntries={setEntries}
-	    />*/}
+    <div id="home">
+	   <Sidebar 
+        handleLogout={handleLogout}
+        handleWrite={handleWrite}
+        handleRead={handleRead}
+        handleInsights={handleInsights}
+      />
+     <Selected selected={selected}/>
     </div>
   )
 }

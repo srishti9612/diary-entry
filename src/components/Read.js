@@ -1,98 +1,143 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import deleteService from '../services/entries.js'
+import { ReactComponent as Prev } from './assets/prev.svg'
+import { ReactComponent as Next } from './assets/next.svg'
+import { ReactComponent as Delete } from './assets/delete.svg'
 import './Read.css'
-import prev from "./assets/prev.png"
-import next from "./assets/next.png"
-import del from "./assets/delete.png"
+import './Common.css'
+import entryService from '../services/entries.js'
+import Loader from 'react-loader-spinner'
+import helper from '../utils/helper.js'
 
-const Read = ({entries, currentEntry, setCurrentEntry, setEntries}) => {
 
-useEffect(() => {
-  if(entries.length != 0){
-    setCurrentEntry(entries.length-1)
-  }
-}, [])
+const Read = () => {
 
-if(entries.length != 0){
-let Length = entries.length
+    const [ entries, setEntries ] = useState([])
+    const [ currentEntry, setCurrentEntry ] = useState(0)
+    let Entry, Length, Content, Date
 
-let Entry = entries[currentEntry]
+    useEffect(() => {
 
-let Content = (Entry) 
-	? Entry.content : "NO CONTENT"
+        entryService
+             .getAll()
+             .then(returnedObject => {
+                 console.log(returnedObject)
+                 let entriesArray = returnedObject.reverse()
+                 setEntries(entriesArray)
+                 console.log(currentEntry)
+                 console.log(entries)
+             })
 
-return (
-    <div 
-	id="read" 
-	className="col-8 nopadding">
-     <div id="insideread">
-      <div id="content"><p>{Content}</p></div>
-      <div id="bottombar">
-       {<>
-	 <img
-	   id="prev"
-	   align="left"
-	   src={prev}
-	   onClick={()=>{
-	     if(currentEntry+1<Length)
-               setCurrentEntry(currentEntry+1)
-	   }}>
-	 </img>
-	 <img
-	   id="next"
-	   align="left"
-	   src={next}
-	   onClick={()=>{
-	      if(currentEntry-1>=0)
-               setCurrentEntry(currentEntry-1)
-	     }
-            }>
-         </img>
-         <img
-	   id="delete"
-	   align="right"
-	   src={del}
-	   onClick={()=>{
-	   if(currentEntry>=0){
-	   let entries1 = [...entries]
-	   const deletedEntry = entries1[currentEntry]
-           const entryId = deletedEntry._id 
+        console.log(entries)
 
-	   deleteService
-	      .deleteEntry(entryId)
-	      .then(returnedObject => {
-	         console.log = function () {}
-	      })
+    }, [])
 
-	   entries1.splice(currentEntry, 1)
-	   setEntries(entries1)
 
-            if(currentEntry==entries1.length){
-	      setCurrentEntry(currentEntry-1)
-	    }else{
-	     setCurrentEntry(currentEntry)
-	    }
-	   }
-	  
-	  }}>
-	 </img>
-	</>
+
+    if (entries.length!==0) {
+            Length = entries.length
+            
+            Entry = entries[currentEntry]
+
+            console.log(Entry)
+            
+            Content = (Entry) ? Entry.content : ""
+
+            Date = (Entry) ? Entry.createdOn.weekday + ", " + Entry.createdOn.month + " " + Entry.createdOn.day + " " + Entry.createdOn.year + ", " + Entry.createdOn.time : ""
+    
+            console.log(Content)
+            console.log(Date)
+    } else {
+            Date = ""
+            Content = ""
+    }        
+    
+ 
+    const handleDelete = () => {
+
+        if(entries.length > 0) {
+            let entries1 = [...entries]
+            const deletedEntry = entries1[currentEntry]
+            const entryId = deletedEntry._id 
+
+            deleteService
+                 .deleteEntry(entryId)
+                 .then(returnedObject => {
+                    console.log('delete successful')
+                    helper.showtoast("Entry Deleted!!")
+                 })
+
+                 entries1.splice(currentEntry, 1)
+                 setEntries(entries1)
+                 
+
+                if (currentEntry===entries1.length){
+                    setCurrentEntry(currentEntry-1)
+                } else {
+                    console.log(entries)
+                    setCurrentEntry(currentEntry)
+                }
+               
        }
-      </div>
-     </div>
-    </div>
- ) 
-}
+ }
 
-else {
+    const handlePrev = () => {
+    
+        if(currentEntry-1>=0) {
+            setCurrentEntry(currentEntry-1)
+        }
+    }
 
-return (
-    <div id="noContent">
-      <p>No Content</p>
-    </div>
- )
-}
+    const handleNext = () => {
+      
+        if(currentEntry+1<Length) {
+            setCurrentEntry(currentEntry+1)
+        }
+    }
 
+    return (
+            <div className="read">
+               <div className="readingbox">
+                { 
+                 (Content !== "") ? (
+                  <>
+                  <div className="date-info">{Date}</div>
+                  <div className="innerbox">
+                   {Content}
+                  </div>
+                  </>) 
+                    : 
+                   (<div className="loader">
+                    <Loader
+                      type="Oval"
+                      color="#737373"
+	                  height={70}
+	                  width={70}
+	                  timeout={3000}/>
+                    </div>) 
+                 }
+               </div>
+               <div className="readactions">
+                  <div className="prevaction" onClick={handlePrev}>
+                     <div className="iconbackground">
+                      <Prev/>
+                     </div>
+                  </div>
+                  <div className="nextaction" onClick={handleNext}> 
+                     <div className="iconbackground">
+                      <Next/>
+                     </div>
+                  </div>
+                  <div className="dividingline">
+                  </div>
+                  <div className="deleteaction">
+                     <div className="iconbackground" onClick={handleDelete}>
+                      <Delete/>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        ) 
 }
 
 export default Read

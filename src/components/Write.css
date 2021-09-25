@@ -1,0 +1,86 @@
+.write {
+    width: 105vh;
+    height: 86vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.writeform {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.writeactions {
+    width: 8%;
+    height: 25%;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.writingbox {
+    width: 80%;
+    height: 85%;
+    margin-right: 4vh;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.textareastyle {
+    height: 100%;
+    width: 100%;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 2vh; 
+    outline: none;
+    border: 0px none;
+    resize: none;
+    white-space: pre-wrap;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    margin: 0;
+    resize: none;
+    border-radius: 20px;
+    color: #404040;
+}
+
+.clearaction {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.saveaction {  
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clearsvg {
+    cursor: pointer;
+}
+
+.savesvg {
+    cursor: pointer;
+}

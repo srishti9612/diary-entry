@@ -1,8 +1,50 @@
 .sidebar {
-  width: 40vh;
-  height: 78vh;
-  margin-top: 4vh;
-  border-radius: 0px 30px 30px 0px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: #424242;
+  width: 50vh;
+  height: 86vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+.navlink {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  margin-left: 2vh;
+  margin-bottom: 8vh;
+  width: 32vh;
+  height: 8vh;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navlink:hover {
+  background: rgba(81, 240, 211, 0.1);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.navlink:active {
+  background: rgba(81, 240, 211, 0.2);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.navtext {
+  margin-left: 8vh;
+  color: #404040;
+  font-style: normal;
+  font-weight: normal;
+  user-select: none;
+}
+
+.navicon {
+  margin-left: 7vh;
+}
+
+.active {
+  background-color: rgba(81, 240, 211, 0.1);
+  border-radius: 30px;
+  cursor: pointer;
+}
+

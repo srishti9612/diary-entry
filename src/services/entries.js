@@ -15,6 +15,20 @@ const getAll = () => {
   return request.then(response => response.data)
 }
 
+const getInsights = (insightParams) => { 
+   const token = window.localStorage.getItem('token')
+   console.log(token)
+   const config = {
+     headers: { Authorization: token },
+     params: {
+        insightParams: insightParams
+     }
+   }
+   const request = axios.get('/api/users/insights', config)
+
+   return request.then(response => response.data)
+}
+
 const signup = newObject => {
   const request = axios.post('/api/users', newObject)
   return request.then(response => response.data)
@@ -52,4 +66,4 @@ const newentry = entryObject => {
 	          .catch(err => console.log = function() {})
 }
 
-export default { getAll, signup, login, setToken, newentry, deleteEntry }
+export default { getAll, signup, login, setToken, newentry, deleteEntry, getInsights }
